@@ -1,4 +1,5 @@
-﻿using ConsoleAppProject.App03;
+﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -28,8 +29,12 @@ namespace ConsoleAppProject
             Console.WriteLine();
 
             // Using an extension method for any enumeration
-            StudentGrades grades = new StudentGrades();
-            grades.TestGradesEnumeration();
+            //StudentGrades grades = new StudentGrades();
+            //grades.TestGradesEnumeration();
+            DistanceConverter converter = new DistanceConverter();
+            converter.ConvertDistance();
         }
     }
 }
+
+
