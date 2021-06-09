@@ -54,7 +54,7 @@ namespace ConsoleAppProject.App02
         {
             Console.WriteLine("\n--------------------------------");
             Console.WriteLine("-  BMI Calculator  -");
-            Console.WriteLine("-        By       -");
+            Console.WriteLine("-        By Chris Edgley      -");
             Console.WriteLine("--------------------------------\n");
         }
 
