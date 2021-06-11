@@ -1,38 +1,122 @@
-﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using ConsoleAppProject.Helpers;
-
-namespace ConsoleAppProject.App03
+﻿namespace ConsoleAppProject.App03
 {
+    using System;
+    using System.Linq;
+    using System.Collections.Generic;
+
+    using System.Text;
+
     /// <summary>
-    /// At the moment this class just tests the
-    /// Grades enumeration names and descriptions
+    /// allow a tutor to enter a single mark of each of a list 
+    /// of students and it will convert that mark into a grade. 
+    /// The application will then be able to calculate simple statistics 
+    /// and also calculate and display a student grade profile.
     /// </summary>
+    /// <author>Chris Edgley</author>
     public class StudentGrades
     {
-        public void TestGradesEnumeration()
+
+
+        /// <summary>
+        /// List with all students in this app instance 
+        /// </summary>
+        public List<Student> Students { get; set; }
+
+        /// <summary>
+        /// The mean of total marks
+        /// </summary>
+        public double Mean { get; set; }
+
+        /// <summary>
+        /// The grade profiles in percentages
+        /// </summary>
+        public double[] GradeProfiles { get; set; }
+
+        /// <summary>
+        /// The result of this application print out
+        /// all students, mean and grade profiles
+        /// </summary>
+        public string Result { get; set; }
+
+        /// <summary>
+        /// Update a student mark
+        /// </summary>
+        /// <param name="student">The student model with mark</param>
+        public void UpdateStudentMark(Student student)
         {
-            Grades grade = Grades.C;
+            if (this.Students.Any(
+                s => s.StudentId == student.StudentId &&
+                s.FullName == student.FullName))
+            {
+                this.Students.FirstOrDefault(
+                    s => s.StudentId == student.StudentId &&
+                    s.FullName == student.FullName).Mark = student.Mark;
 
-            Console.WriteLine($"Grade = {grade}");
-            Console.WriteLine($"Grade No = {(int)grade}");
+                Console.WriteLine(UpdateStudentMarkMsg(student.FullName, student.Mark));
+            }
+            else
+            {
+                throw new NullReferenceException($"{student.FullName} cannot be found.\n\r");
+            }
+        }
 
-            Console.WriteLine("\nDiscovered by Andrei!\n");
-            var gradeName = grade.GetAttribute<DisplayAttribute>().Name;
-            Console.WriteLine($"Grade Name = {gradeName}");
+        private bool UpdateStudentMarkMsg(string fullName, int mark)
+        {
+            throw new NotImplementedException();
+        }
 
-            var gradeDescription = grade.GetAttribute<DescriptionAttribute>().Description;
-            Console.WriteLine($"Grade Description = {gradeDescription}");
+        /// <summary>
+        /// Add a student if it is not exists in the students collection
+        /// </summary>
+        /// <param name="student">The new student to be added</param>
+        public void AddStudent(Student student)
+        {
+            try
+            {
+                ValidateStudent(student);
 
-            string testDescription = EnumHelper<Grades>.GetDescription(grade);
-            string testName = EnumHelper<Grades>.GetName(grade);
+                student.StudentId = SetStudentId();
+                this.Students.Add(student);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
-            Console.WriteLine();
-            Console.WriteLine("Discovered by Derek Using EnumHelper\n");
-            Console.WriteLine($"Name = {testName}");
-            Console.WriteLine($"Description = {testDescription}");
+        /// <param name="id">student id</param>
+        /// <returns>Returns the student with the given id</returns>
+        public Student GetStudentById(int id)
+            => this.Students.FirstOrDefault(i => i.StudentId == id);
 
+        /// <summary>
+        /// Select mark props of each student add to list and find minimum mark
+        /// </summary>
+        /// <returns>the min mark from all students</returns>
+        public int GetMinMark()
+            => this.Students.Select(m => m.Mark).ToList().Min();
+
+        /// <summary>
+        /// Select mark props of each student add to list and find maximum mark
+        /// </summary>
+        /// <returns>the max mark from all students</returns>
+        public int GetMaxMark()
+            => this.Students.Select(m => m.Mark).ToList().Max();
+
+        /// <summary>
+        /// Get the last student`s id and add 1 
+        /// </summary>
+        /// <returns>Return the student`s id</returns>
+        private int SetStudentId() => this.Students.Last().StudentId + 1;
+
+        /// <summary>
+        /// Validate is the new student already added to the student collection
+        /// </summary>
+        /// <param name="student">The student to be checked</param>
+        private void ValidateStudent(Student student)
+        {
+            if (this.Students.Any(f => f.FullName == student.FullName))
+                throw new ArgumentException($"Student {student.FullName} already exists.\n\r");
         }
     }
 }
