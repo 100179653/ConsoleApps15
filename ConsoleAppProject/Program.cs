@@ -1,6 +1,6 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
-using ConsoleAppProject.App03;
+
 using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
@@ -19,7 +19,7 @@ namespace ConsoleAppProject
     {
         private static DistanceConverter converter = new DistanceConverter();
         private static BMI index = new BMI();
-        private static StudentGradesInvoker studentGradesInvoker = new StudentGradesInvoker();
+        
 
         public static void Main(string[] args )
         {
@@ -59,7 +59,7 @@ namespace ConsoleAppProject
             }
             else if (options == "3")
             {
-                studentGradesInvoker.Run();
+               
             }
             else if (options == "4")
             {
