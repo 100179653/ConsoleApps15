@@ -13,6 +13,4 @@
 4. App04: Social Network
 5. App05: R-P-S Game
 
-For Andrew, due to unfortunate circumstances my work has almost completely corrupted and only leaving Apps 1, 2 & 5 safe.
-I am hoping these grant me my 40% for this module but if not I will do a resubmission with the board as soon as I can. 
-Again, I am deeply sorry, I did not see this coming until when it came tie to fully upload all the work onto the github.
+https://github.com/100179653/Apps3and4 - repo for Apps 3/4 due to technical issues
