@@ -28,22 +28,11 @@ namespace ConsoleAppProject
             Console.WriteLine("BNU CO453 Applications Programming 2020-2021!");
             Console.WriteLine();
 
-            // Using an extension method for each enumeration
-            // Console.WriteLine("Using MyEnum Extension Method!\n");
-            // Console.WriteLine("MyEnum Value = " + MyEnum.FirstValue);
-            // Console.WriteLine("MyEnum Friendly Value = " + MyEnum.FirstValue.EnumValue());
-            // Console.WriteLine();
-
-            // Using an extension method for any enumeration
-            //StudentGrades grades = new StudentGrades();
-            //grades.TestGradesEnumeration();
             Console.WriteLine("Options for the user");
             Console.WriteLine("Created by Chris Edgley");
             Console.WriteLine("-----------------------");
             Console.WriteLine("1. Distance Converter");
             Console.WriteLine("2. BMI Index");
-            Console.WriteLine("3. Student Grades");
-            Console.WriteLine("4. Social Network");
 
 
             string options = Console.ReadLine();
@@ -56,14 +45,6 @@ namespace ConsoleAppProject
             else if (options == "2")
             {
                 index.CalcBMIIndex();
-            }
-            else if (options == "3")
-            {
-               
-            }
-            else if (options == "4")
-            {
-
             }
 
         }

@@ -2,14 +2,17 @@
 namespace ConsoleAppProject.App02
 {
     /// <summary>
-    /// Please describe the main features of this App
+    /// This application should allow the user
+    /// to calculate their Body Mass Index
+    /// (or BMI)
     /// </summary>
     /// <author>
     /// Chris Edgley
     /// </author>
     public class BMI
     {
-        //comment here     
+        //This constants will stay the same value
+        //whilst the app is running
         public const double UNDERWEIGHT = 18.50;
         public const double NORMAL = 24.99;
         public const double OVERWEIGHT= 29.99;
@@ -17,17 +20,20 @@ namespace ConsoleAppProject.App02
         public const double OBESEII = 39.99;
         public const double OBESEIII = 40.00;
         
-
-        //comments here
         public const int PoundsToStones = 14;
         public const int InchesToFeet = 12;
 
-
+        // These are editable values and change
+        // once the user has entered the information
         private double height;
         private double weight;
 
         public double BMIIndex = 0.00;
 
+        //This method is the whole BMI calculator
+        //It runs other methods to get the user's
+        //BMI and displays a BAME Message to alert
+        //People of BAME about further risks
         public void CalcBMIIndex()
         {
             OutputHeader();
@@ -50,6 +56,8 @@ namespace ConsoleAppProject.App02
             OutputBAME();
         }
 
+        // This is what shows on top of the app
+        // It shows the author and what app it is
         public void OutputHeader()
         {
             Console.WriteLine("\n--------------------------------");
@@ -58,6 +66,7 @@ namespace ConsoleAppProject.App02
             Console.WriteLine("--------------------------------\n");
         }
 
+        // This method allows the user to selec
         private int GetUnits()
         {
             int unit = 0;
@@ -65,6 +74,8 @@ namespace ConsoleAppProject.App02
             string value = Console.ReadLine();
             if (String.Equals(value, "metric")) unit = 1;
             else if (String.Equals(value, "imperial")) unit = 2;
+            else if (String.Equals(value, "Metric")) unit = 1;
+            else if (String.Equals(value, "Imperial")) unit = 2;
             return unit;
         }
 
