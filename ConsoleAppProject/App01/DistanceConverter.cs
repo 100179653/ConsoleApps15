@@ -35,7 +35,7 @@ namespace ConsoleAppProject.App01
             switch (input)
             {
 
-                case "1": MilesToMetres();
+                case "1":MetresToMiles();
                     break;
 
                 case "2": FeetToMiles();
@@ -43,14 +43,14 @@ namespace ConsoleAppProject.App01
 
                 case "3": MetresToFeet();
                     break;
-                case "4": MetresToMiles();
+                case "4": MilesToMetres();
                     break;
                 case "5": MilesToFeet();
                     break;
                 case "6": FeetToMetres();
                     break;
                 default: Console.Write("Please select an option from 1-6!");
-                   break;
+                    break;
             }
         }
 
@@ -98,7 +98,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("So you have chosen Feet to Miles");
             Console.WriteLine("Please enter the number of Feet: ");
             string input = Console.ReadLine();
-            miles = Convert.ToDouble(input);
+            feet = Convert.ToDouble(input);
             CalculateFeetToMiles();
             OutputFeetToMiles();
         }
@@ -136,7 +136,7 @@ namespace ConsoleAppProject.App01
         // This method allows the computer to "convert" feet to metres
         private void CalculateFeetToMetres()
         {
-            metres = feet / 3.241;
+            metres = feet / 3.28084;
         }
         // This method allows the computer to "convert" metres to miles
         private void CalculateMetresToMiles()
@@ -151,12 +151,12 @@ namespace ConsoleAppProject.App01
         // This method allows the computer to "convert" feet to miles
         private void CalculateFeetToMiles()
         {
-            miles = feet * 5280;
+            miles = feet / 5280;
         }
         // This method allows the computer to "convert" metres to feet
         private void CalculateMetresToFeet()
         {
-            feet = metres * 3.241;
+            feet = metres * 3.28084;
         }
         // this method outputs the calculation of miles to feet
         private void OutputMilesToFeet()
@@ -204,7 +204,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("Press the 3 key for Metres to Feet!");
             Console.WriteLine("Press the 4 key for Metres to Miles!");
             Console.WriteLine("Press the 5 key for Miles to Feet!");
-            Console.WriteLine("Press the 6 key for Feet to Miles!\n");
+            Console.WriteLine("Press the 6 key for Feet to Metres!\n");
 
         }
     }
