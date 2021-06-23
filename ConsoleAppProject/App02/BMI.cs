@@ -66,7 +66,8 @@ namespace ConsoleAppProject.App02
             Console.WriteLine("--------------------------------\n");
         }
 
-        // This method allows the user to selec
+        // This method allows the user to select between metric measurement
+        // and imperial measurement 
         private int GetUnits()
         {
             int unit = 0;
@@ -79,6 +80,7 @@ namespace ConsoleAppProject.App02
             return unit;
         }
 
+        //This method gets the user's height in metres 
         private void GetMetres()
         {
             Console.Write("Please enter your height in metres : ");
@@ -86,6 +88,7 @@ namespace ConsoleAppProject.App02
             height = Convert.ToDouble(value);
         }
 
+        //This method gets the user's weight in kilograms
         private void GetKG()
         {
             Console.Write("Please enter your weight in kg: ");
@@ -93,11 +96,15 @@ namespace ConsoleAppProject.App02
             weight = Convert.ToDouble(value);
         }
 
+        // This method calculates a user's BMI by using their
+        // weight in kilograms and height in metres
         private void CalculateMetricBMI()
         {
             BMIIndex = weight / (height * height);
         }
 
+        // This shows the user what their BMI means in the
+        // conext 
         private void OutputHealthMessage(double BMIIndex)
         {
             Console.Write("Your BMI is:");
@@ -111,6 +118,7 @@ namespace ConsoleAppProject.App02
 
         }
 
+        //This method gets the user's height in inches 
         private void GetInches()
         {
             Console.Write("Please enter your height in inches : ");
@@ -118,6 +126,7 @@ namespace ConsoleAppProject.App02
             height = Convert.ToDouble(value);
         }
 
+        //This method gets the user's weight in pounds 
         private void GetPounds()
         {
             Console.Write("Please enter your weight in pounds: ");

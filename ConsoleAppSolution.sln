@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppProject", "Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps", "WebApps\WebApps.csproj", "{15F2BDFB-CB2F-4D62-80E5-6BC9606D7C66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App01", "App01\App01.csproj", "{CCB91059-89F3-4CAD-A90C-ABF278551AF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App01", "App01\App01.csproj", "{CCB91059-89F3-4CAD-A90C-ABF278551AF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppProject1", "ConsoleAppProject1\ConsoleAppProject1.csproj", "{2CE14000-B89B-4C3C-9C0F-93BACAA50AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Tests", "ConsoleAppProject1\ConsoleApp.Tests.csproj", "{2CE14000-B89B-4C3C-9C0F-93BACAA50AA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
